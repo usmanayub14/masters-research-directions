@@ -1,55 +1,84 @@
-# Hardware Security Research
+# Masters Research Directions
 
-This repository tracks my learning and research exploration around **hardware security at RTL**, with a focus on automated vulnerability detection, static analysis, and security bug repair.
+This repository tracks my exploration of potential graduate research directions in digital hardware, with an emphasis on areas that connect naturally to my background in RTL design verification and hardware-oriented projects.
 
-My background is primarily in digital design verification, so I am approaching hardware security from the verification side: understanding how security weaknesses appear in RTL, how they can be detected automatically, and how generated fixes can be validated reliably.
+The goal is to build enough technical depth to evaluate possible MS/PhD directions, understand recent research, and identify concrete problems that are worth pursuing further.
 
-## Current Focus
+## Current Research Threads
 
-I am currently studying:
+### 1. Automated RTL Security Detection and Repair
 
-- Hardware security fundamentals and hardware CWEs
-- RTL and netlist-based static analysis
+This thread focuses on hardware security at the RTL and netlist level, particularly:
+
+- Hardware CWEs and security weaknesses
+- Static analysis of RTL and synthesized netlists
 - Structural vulnerability detection
+- AST-based and graph-based analysis
 - SVQL and query-based hardware security analysis
 - LLM-assisted hardware security bug repair
-- Verification of generated patches and the strength of test/security oracles
+- Verification of generated patches
+- Security oracles, testbench adequacy, and validation cost
+- Possible use of dependency-aware scoping for detection and re-validation
 
-Two questions I am particularly interested in are:
+A central question I am exploring is whether security analysis and patch validation can be restricted to the logic affected by a design change without losing important findings.
 
-1. Can hardware security analysis be scoped around the logic affected by a design change without losing important cross-module findings?
-2. Can dependency-aware test or check selection reduce the cost of validating automatically generated RTL fixes without allowing incorrect or insecure patches to pass?
+See: **Issue #1 — Automated RTL Security Detection and Repair**
 
-## Repository Structure
+---
 
-```text
-.
-├── README.md
-├── REFERENCES.md
-├── notes/
-│   ├── hardware-security-fundamentals.md
-│   └── rtl-static-analysis.md
-├── papers/
-│   ├── svql.md
-│   └── llm-hardware-bug-repair.md
-└── research/
-    └── research-directions.md
-```
+### 2. Efficient AI Acceleration for Edge Systems
 
-The repository will grow as I read, verify ideas against the original papers, and develop my own observations.
+This thread focuses on hardware/software co-design for efficient AI inference, especially for resource-constrained systems.
 
-## Current Reading
+Topics of interest include:
 
-My current reading includes:
+- INT8 and low-precision inference
+- Post-training quantization
+- Accelerator architecture
+- MAC arrays and compute organization
+- Dataflow choices
+- Memory hierarchy and data movement
+- FPGA and ASIC implementation trade-offs
+- Hardware-aware neural network optimization
+- Latency, energy, memory footprint, and utilization
+- Hardware/software co-design for edge AI
 
-- N. Allison and B. Tan, **SVQL: SystemVerilog Query Language**, GLSVLSI 2026.
-- B. Ahmad, S. Thakur, B. Tan, R. Karri and H. Pearce, **On Hardware Security Bug Code Fixes by Prompting Large Language Models**, IEEE TIFS 2024.
-- Related work on hardware CWEs, static analysis, LLM-assisted detection, and automated RTL repair.
+This direction builds on my previous work around quantized TinyML models and extends it toward the hardware architecture required to make low-precision inference efficient in practice.
 
-The complete reference list and what I have actually read from each source are tracked in [`REFERENCES.md`](REFERENCES.md).
+See: **Issue #2 — Efficient AI Acceleration for Edge Systems**
 
-## Status
+---
 
-This repository currently contains **learning notes and research questions, not research results**.
+## How I Am Using This Repository
 
-Any implementation, experiments, measurements or conclusions will be added only after they have actually been performed and verified.
+The repository is intended as a research notebook rather than a finished research project.
+
+I use the issue threads to record:
+
+- Papers and technical material I read
+- What I understand from them
+- Concepts that were new to me
+- Limitations of existing approaches
+- Connections to my previous work
+- Open technical questions
+- Possible thesis directions
+
+The emphasis is on developing and refining research questions rather than collecting large amounts of documentation.
+
+## Current Status
+
+Both directions are still being explored.
+
+No final thesis direction has been selected, and the repository should not be interpreted as reporting completed research results.
+
+As the reading progresses, promising questions may develop into small experiments, implementations, or more focused research proposals.
+
+## Background
+
+My primary background is in digital design verification, including RTL/SystemVerilog, simulation, assertions, regression workflows, and verification infrastructure.
+
+I am particularly interested in research problems where verification, automation, and hardware design intersect.
+
+## References
+
+Sources, papers, and reading status will be tracked in [`REFERENCES.md`](REFERENCES.md) as the research threads develop.
